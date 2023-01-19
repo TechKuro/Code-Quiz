@@ -98,3 +98,11 @@ document.getElementById("start").addEventListener("click", function(){
     document.getElementById("questions").classList.remove("hide");
 });
 
+document.getElementById("submit").addEventListener("click", function(){
+    let initials = document.getElementById("initials").value;
+    //save the score and initials in localstorage
+    localStorage.setItem("initials", initials);
+    localStorage.setItem("score", score);
+    //redirect to the highscore page
+    window.location.href = "highscores.html";
+});
