@@ -32,6 +32,24 @@ const questions = [
     },
   ];
 
+  function startQuiz() {
+    // Start the timer
+    time = questions.length * 15;
+    timerId = setInterval(updateTime, 1000);
+  
+    // Display the first question
+    displayQuestion();
+  }
+  
+  // Function to update the time
+  function updateTime() {
+    time--;
+    document.getElementById("time").innerHTML = time;
+    if (time <= 0) {
+      endQuiz();
+    }
+  }
+
 // Function to display the current question
 function displayQuestion() {
     // Update the question title
