@@ -65,3 +65,21 @@ function displayQuestion() {
     choice.onclick = checkAnswer;
     document.getElementById("choices").appendChild(choice);
   }}
+
+  // Function to check if the answer is correct
+function checkAnswer() {
+    if (this.innerHTML === questions[currentQuestion].correctAnswer) {
+      score++;
+      document.getElementById("feedback").innerHTML = "Correct!";
+    } else {
+      time -= 10;
+      document.getElementById("feedback").innerHTML = "Incorrect!";
+    }
+    document.getElementById("feedback").classList.remove("hide");
+    currentQuestion++;
+    if (currentQuestion === questions.length) {
+      endQuiz();
+    } else {
+      setTimeout(displayQuestion, 1000);
+    }
+  }
