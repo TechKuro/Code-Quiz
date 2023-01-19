@@ -83,3 +83,10 @@ function checkAnswer() {
       setTimeout(displayQuestion, 1000);
     }
   }
+
+  // Function to end the quiz
+function endQuiz() {
+    clearInterval(timerId);
+    document.getElementById("end-screen").classList.remove("hide");
+    document.getElementById("final-score").innerHTML = score;
+  }
