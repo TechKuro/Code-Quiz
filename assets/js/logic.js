@@ -33,7 +33,7 @@ const questions = [
   ];
 
   function startQuiz() {
-    // Start the timer
+// Start the timer
     time = questions.length * 15;
     timerId = setInterval(updateTime, 1000);
   
@@ -41,7 +41,7 @@ const questions = [
     displayQuestion();
   }
   
-  // Function to update the time
+// Function to update the time
   function updateTime() {
     time--;
     document.getElementById("time").innerHTML = time;
@@ -54,6 +54,9 @@ const questions = [
 function displayQuestion() {
     // Update the question title
     document.getElementById("question-title").innerHTML = questions[currentQuestion].question;
+
+// Clear the previous choices
+  document.getElementById("choices").innerHTML = "";
 
 // Display the choices for the current question
   for (let i = 0; i < questions[currentQuestion].choices.length; i++) {
