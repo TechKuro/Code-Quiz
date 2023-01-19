@@ -32,12 +32,15 @@ const questions = [
     },
   ];
 
+// Function to display the current question
+function displayQuestion() {
+    // Update the question title
+    document.getElementById("question-title").innerHTML = questions[currentQuestion].question;
 
-
-
+// Display the choices for the current question
   for (let i = 0; i < questions[currentQuestion].choices.length; i++) {
     let choice = document.createElement("button");
     choice.innerHTML = questions[currentQuestion].choices[i];
     choice.onclick = checkAnswer;
     document.getElementById("choices").appendChild(choice);
-  }
+  }}
