@@ -15,3 +15,10 @@ if (initials !== null && score !== null) {
     highscoreItem.appendChild(scoreSpan);
     highscoresList.appendChild(highscoreItem);
   }
+
+  // Add event listener to clear highscores button
+document.getElementById("clear").addEventListener("click", function () {
+    localStorage.clear();
+    // remove the highscores list
+    document.getElementById("highscores").innerHTML = "";
+  });
