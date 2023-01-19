@@ -31,3 +31,13 @@ const questions = [
         correctAnswer: "==="
     },
   ];
+
+
+
+
+  for (let i = 0; i < questions[currentQuestion].choices.length; i++) {
+    let choice = document.createElement("button");
+    choice.innerHTML = questions[currentQuestion].choices[i];
+    choice.onclick = checkAnswer;
+    document.getElementById("choices").appendChild(choice);
+  }
