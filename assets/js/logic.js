@@ -90,3 +90,11 @@ function endQuiz() {
     document.getElementById("end-screen").classList.remove("hide");
     document.getElementById("final-score").innerHTML = score;
   }
+
+  // Add event listener to start button
+document.getElementById("start").addEventListener("click", function(){
+    startQuiz();
+    document.getElementById("start-screen").classList.add("hide");
+    document.getElementById("questions").classList.remove("hide");
+});
+
